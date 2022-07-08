@@ -81,7 +81,7 @@
 que contengan datos coincidentes en ambas tablas; sin embargo esto no pasará siempre. 
 
 En algún momento, se dará el caso en donde tengamos muchas coincidencias en ambas tablas; pero habrán excepciones 
-donde no se traigan los datos vacíos, datos con valor NULL o no asignados. Entonces debemos especificar de qué }
+donde no se traigan los datos vacíos, datos con valor NULL o no asignados. Entonces debemos especificar de qué 
 tabla deseamos traer todos los resultados sin importar que no tenga coincidencias con la otra tabla. Y esto lo
 logramos haciendo uso de LEFT JOIN y RIGHT JOIN.
 
@@ -89,7 +89,7 @@ Tomando como ejemplo, dos tablas A y B, una ubicada a la izquierda y otra a la d
 
 	LEFT JOIN -> Esta variación especificará que se deberán traer todos los datos de la tabla ubicada a la 
 				 izquierda (que siguiendo el orden, sería la tabla A) sin importar que no hayan algunas
-                 coincidencias en la tabla de la derecha (tabla B.
+                 coincidencias en la tabla de la derecha (tabla B).
                  
 	RIGHT JOIN -> Esta variación especificará que se deberán traer todos los datos de la tabla ubicada a la
 				  derecha (tabla B) sin importar que no hayan algunas coincidencias en la tabla izquierda
@@ -166,6 +166,12 @@ Fuente adicional: https://www.youtube.com/watch?v=eNikUI0Y8y8
 	FROM productos
 	CROSS JOIN ingredientes i
 	ORDER BY producto;
+    
+  Existe una forma implícita de hacer CROSS JOIN, y es añadiendo más tablas en la cláusula FROM de nuestra
+  consulta. Ejemplo:
+  
+	SELECT p.Producto, i.ingredientes
+	FROM producto p, ingredientes i;
   */
 
 
@@ -216,11 +222,3 @@ Fuente adicional: https://www.youtube.com/watch?v=eNikUI0Y8y8
 		SELECT ingredientes
 		FROM ingredientes;
   */
-
-  
-  
-    
-
-  
-
-
